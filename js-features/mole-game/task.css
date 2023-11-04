@@ -17,8 +17,9 @@
   width: 150px;
   height: 150px;
   margin: 0 15px 30px;
-  background: gray;
+  background: black;
   border-radius: 50%;
+  border: 2px solid red;
 }
 
 .hole_has-mole {
