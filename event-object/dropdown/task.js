@@ -1,17 +1,25 @@
-let dropdown = document.querySelector(".dropdown__value");
-let list = document.querySelector(".dropdown__list");
 
-dropdown.addEventListener('click', function() {
-    list.classList.toggle('dropdown__list_active');
+let btnDropdown = document.querySelector('.dropdown__value');
+let listDropdown = document.querySelector('.dropdown__list');
+
+
+btnDropdown.addEventListener('click', function(e) {
+    listDropdown.classList.toggle('dropdown__list_active')
 });
 
-let dropdown__item = document.querySelector(".dropdown__item");
-let dropdown__link = Array.from(document.querySelectorAll(".dropdown__link"));
+let linkDropdown = Array.from(document.querySelectorAll(".dropdown__link"));
 
-dropdown__link.forEach((value) => {
-    value.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdown.textContent = value.textContent
-        list.classList.toggle('dropdown__list_active');
+linkDropdown.forEach((value) => {
+    value.addEventListener('click', (e) => {
+        e.preventDefault();
+        btnDropdown.textContent = value.textContent
+        listDropdown.classList.toggle('dropdown__list_active');
     });
 });
+
+
+
+
+
+
+
