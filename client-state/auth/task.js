@@ -7,8 +7,8 @@ const userId = document.getElementById('user_id');
 
 
 const showGreet =() => {
-  signin.classList.remove('signin_active');
-  welcome.classList.add('welcome_active');
+    signin.classList.remove('signin_active');
+    welcome.classList.add('welcome_active');
 };
 
 window.addEventListener('load', ()=> {
@@ -26,15 +26,15 @@ form.addEventListener('submit', (e)=> {
     request.responseType = 'json'
     request.send(userDate);
     request.addEventListener('load', () => {
-            let data = request.response;
-            if (data.success) {
-                showGreet()
-                userId.textContent = data.user_id
-                localStorage.loginId = data.user_id
-            }  else {
-                alert('Неверный логин/пароль');
-                form.reset();
-            }
+        let data = request.response;
+        if (data.success) {
+            showGreet()
+            userId.textContent = data.user_id
+            localStorage.loginId = data.user_id
+        }  else {
+            alert('Неверный логин/пароль');
+            form.reset();
+        }
     });
 });
 
